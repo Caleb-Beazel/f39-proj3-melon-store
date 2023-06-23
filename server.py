@@ -16,7 +16,10 @@ def all_melons():
 
 @app.route("/melon/<melon_id>")
 def melon_details(melon_id):
-    return render_template("melon_info.html")
+
+    melon = melons.get_by_id(melon_id)
+
+    return render_template("melon_details.html", melon=melon)
 
 @app.route("/add_to_cart<melon_id>")
 def add_to_cart(melon_id):
