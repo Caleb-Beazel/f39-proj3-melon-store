@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Melons</title>
+    {% extends 'base.html' %}
+</head>
+{% block body %}
+<body>
+    <h1>All Melons</h1>
+
+    <div id="melon-list">
+    {% for melon in melon_list %}
+    <div class="card text-center">
+        <h3>
+            <a href="{{ url_for('melon_details', melon_id=melon.melon_id) }}">{{ melon.common_name }}</a>
+        </h3>
+        <img class="melon-image" src="{{ melon.image_url }}">
+
+        <h4><b>{{ melon.price_str() }}</b></h4>
+    </div>
+    <br><br>
+    {% endfor %}
+    </div>
+
+</body>
+{% endblock %}
+</html>
