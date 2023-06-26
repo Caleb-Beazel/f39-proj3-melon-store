@@ -33,6 +33,7 @@ with open("melons.csv", "r") as csvfile:
         melon_dict[melon_id] = melon
 
 def get_by_id(melon_id):
+    # print(melon_id)
     return melon_dict[melon_id]
 
 def get_all():
